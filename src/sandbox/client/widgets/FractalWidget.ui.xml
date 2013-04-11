@@ -1,0 +1,108 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    
+	<ui:style>
+		.borders { border: 1px solid black; }
+		.fill { width: 100px; }
+		.leftCell { width: 80px; }
+		.right { float:right; }
+		.title { margin: 5px; width: 100%; font: bold 12pt/10pt sans-serif; }
+		.modelButton { width: 80px;}
+		.grid {width: 100%; border-bottom: 1px solid black;}
+		.mainPanel {
+		  margin: 5px;
+		  padding: 5px;
+		  position: absolute;
+		  left: 5px;
+		  right: 5px;
+		  top: 5px;
+		  bottom: 5px;
+		}
+	</ui:style>
+    
+    <g:DockLayoutPanel styleName="{style.mainPanel}" ui:field="dockPanel">
+     	<g:west size="200">
+     		<g:FlowPanel styleName='{style.borders}'>
+     			<g:HTML styleName='{style.title}' ui:field="title" text='Default Model' />
+	     		<g:Grid styleName='{style.grid}'>
+	     			<g:row>
+	     				<g:customCell>
+		     				<g:Button styleName='{style.leftCell}' ui:field='ruleButton' text='Reset rule' />
+	     				</g:customCell>
+	     				<g:customCell>
+		     				<g:Button styleName='{style.fill}' ui:field='startButton' text='Start' />
+	     				</g:customCell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:cell>
+	     					<div></div>
+	     				</g:cell>
+	     				<g:cell>
+	     					<div></div>
+	     				</g:cell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:cell>
+	     					<div>Current step:</div>
+	     				</g:cell>
+	     				<g:customCell>
+		     				<g:HTML styleName='{style.right}' ui:field='stepLabel' text='0' />
+	     				</g:customCell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:cell>
+	     					<div></div>
+	     				</g:cell>
+	     				<g:cell>
+	     					<div></div>
+	     				</g:cell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:cell>
+	     					<div>Steps:</div>
+	     				</g:cell>
+	     				<g:customCell>
+		     				<g:TextBox styleName='{style.fill}' ui:field='stepCount' text='20'/>
+	     				</g:customCell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:customCell>
+		     				<g:Button styleName='{style.leftCell}' ui:field='oneStepButton' text='One Step' />
+	     				</g:customCell>
+	     				<g:customCell>
+		     				<g:Button styleName='{style.fill}' ui:field='multiStepButton' text='Many Steps' />
+	     				</g:customCell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:customCell>
+	     					<g:CheckBox styleName='{style.leftCell}' ui:field='gridCheckBox' text='Grid' />
+	     				</g:customCell>
+	     				<g:customCell>
+	     					<g:CheckBox styleName='{style.fill}' ui:field='reverseCheckBox' text='Reverse' />
+	     				</g:customCell>
+	     			</g:row>
+	     			<g:row>
+	     				<g:cell>
+	     					<div>Start shape:</div>
+	     				</g:cell>
+	     				<g:customCell>
+		     				<g:ListBox styleName='{style.fill}' ui:field='shapeList' />
+	     				</g:customCell>
+	     			</g:row>
+	     		</g:Grid>
+	     		<g:HorizontalPanel width="100%">
+	     			<g:Button styleName='{style.modelButton}' ui:field='shareButton' text='Share'></g:Button>
+	     			<g:Button styleName='{style.modelButton}' ui:field='deleteButton' text='Delete'></g:Button>
+	     		</g:HorizontalPanel>
+	     		<g:HTML styleName='{style.htmltext'>Your fractals:</g:HTML>
+	     		<g:ListBox visibleItemCount="5" width="100%" ui:field="userModels"/>
+	     		<g:HTML styleName='{style.htmltext'>Public fractals:</g:HTML>
+	     		<g:ListBox visibleItemCount="5" width="100%" ui:field="sharedModels"/>
+     		</g:FlowPanel>
+     	</g:west>
+     	<g:center>
+     		<g:ScrollPanel ui:field='content' />
+     	</g:center>
+    </g:DockLayoutPanel>
+
+</ui:UiBinder>
