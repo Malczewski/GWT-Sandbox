@@ -1,3 +1,3 @@
-GWT playground:
--cellular automaton (create your "Game of Life" with own rules);
+GWT playground:<br/>
+-cellular automaton (create your "Game of Life" with own rules);<br/>
 -fractal builder
